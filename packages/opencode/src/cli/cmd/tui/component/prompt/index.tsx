@@ -484,7 +484,7 @@ export function Prompt(props: PromptProps) {
   async function submit() {
     if (props.disabled) return
     if (autocomplete?.visible) return
-    if (!store.prompt.input) return
+    if (!store.prompt.input.trim()) return
     const trimmed = store.prompt.input.trim()
     if (trimmed === "exit" || trimmed === "quit" || trimmed === ":q") {
       exit()
